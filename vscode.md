@@ -17,6 +17,7 @@
 * ctrl+ shift+ D 打开debug面板
 * alt+ 上方菜单的字母 快速打开上方菜单
 * 打开关闭控制台 ctrl+ j
+* 浏览最近打开过的项目　ctrl+ r
 
 
 * 隐藏左侧栏目窗口　ctrl+ b
