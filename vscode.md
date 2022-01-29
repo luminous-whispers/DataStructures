@@ -31,7 +31,7 @@
     ctrl+ |
     ctrl+ 1/2/3 拓展分屏数量( 1-> 2-> 3)
     当前分屏左右上下移动 ctrl+ k+ Arrow
-    正交拆分窗口 ctrl+ k, ctrl+ \
+    正交拆分窗口 ctrl+ k, ctrl+ \ (直接上下拆分)
     直接拆分当前窗口 ctrl+　k, ctrl+ shift+ \
     关闭分屏 ctrl+ w
     在不同文件间移动 ctrl+ tab
