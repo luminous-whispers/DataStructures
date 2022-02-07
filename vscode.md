@@ -12,16 +12,19 @@
 * 选择主题 ctrl+k, ctrl+t
 * 快捷键页 ctrl+k, ctrl+s  
 * 打开文件 ctrl+ o
+    打开文件夹 ctrl +k,　ctrl+ o
 * 保存 ctrl+ s / 另存为 ctrl+　shift+ s
 * ctrl+ < 打开设置
 * ctrl+ shift+ D 打开debug面板
 * alt+ 上方菜单的字母 快速打开上方菜单
 * 打开关闭控制台 ctrl+ j
 * 浏览最近打开过的项目　ctrl+ r
+* ctrl + e 快速切换文件(最近文件)
 
 
 * 隐藏左侧栏目窗口　ctrl+ b
 * 隐藏开启终端窗口 ctrl+ ` /ctrl+ shift+ ` 创建新窗口
+* 聚焦到工作区 ctrl+ shift+ E
 * 给建议 ctrl+ i
 * find ctrl+ f
     全局搜索: shift+ ctrl+ f
@@ -31,10 +34,11 @@
     ctrl+ |
     ctrl+ 1/2/3 拓展分屏数量( 1-> 2-> 3)
     当前分屏左右上下移动 ctrl+ k+ Arrow
-    正交拆分窗口 ctrl+ k, ctrl+ \ (直接上下拆分)
-    直接拆分当前窗口 ctrl+　k, ctrl+ shift+ \
+    正交拆分窗口 ctrl+ k, ctrl+ | (直接上下拆分)
+    直接拆分当前窗口 ctrl+　k, ctrl+ shift+ \ (将当前文档拆分成克隆窗口)
     关闭分屏 ctrl+ w
     在不同文件间移动 ctrl+ tab
+
 
 * 折叠
     折叠 ctrl+ shift+ [  
@@ -103,7 +107,7 @@
 * 后退( 返回主函数 ) alt+ y (自定)
 
 ## 书签
-开关: alt+ b
+开关( 打/关标签 ): alt+ b+ 0
 上下跳跃 alt+ b+ -/=
 
 
@@ -113,7 +117,7 @@
 但是vscode可以选中后,自动在两侧加surround类标点, 比如{} *,
 利用这一点可以快速实现加粗,斜体等操作.
 
-<br>
+<br> 
 
 vscode会自动补全[],但是当你遇到 ]时,再摁一次],不会再打一个], 而是会很人性化的跳过.
 * markdown下 "entre"不会换行, 可以用数字或*等标识符强制换行
