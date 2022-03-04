@@ -1,1 +1,0 @@
-strcpy(a, b);
