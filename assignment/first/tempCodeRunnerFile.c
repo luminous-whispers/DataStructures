@@ -1,0 +1,1 @@
+strcpy(a, b);

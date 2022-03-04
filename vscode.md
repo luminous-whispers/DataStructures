@@ -6,10 +6,12 @@
 <br>
 
 **ctrl+ shift+ p 全局命令行** //输入?可快速获取帮助
+**shift+ alt+ f**快速格式化代码( 但是有时候过于紧凑 )
 ## 代码 
 规则是alt+e, 然后ctrl+ 某语言代称
-* 运行 alt+ e, r
+* 运行 alt+ e, r (这个最近报错command 'npm.runScript' not found不知道怎么了)或ctrl+ alt+n 
 * 运行python文件 alt+ e, p
+* 在终端中运行python所选代码 shift+entre
 
 ## 窗口快捷键
 
@@ -17,14 +19,37 @@
 * 快捷键页 ctrl+k, ctrl+s  
 * 打开文件 ctrl+ o
     打开文件夹 ctrl +k,　ctrl+ o
+    文件: 新建文件 alt+ ,(自定)
+    文件: 新建文件夹 alt+ . (自定)
+    文件: 折叠文件夹 atl+ /(自定)/ 展开文件夹用enter即可
+    复制文件绝对路径: shift+ alt+ c
 * 保存 ctrl+ s / 另存为 ctrl+　shift+ s
 * ctrl+ < 打开设置
 * ctrl+ shift+ D 打开debug面板
 * alt+ 上方菜单的字母 快速打开上方菜单
-* 打开关闭控制台 ctrl+ j
 * 浏览最近打开过的项目　ctrl+ r
 * ctrl + e 快速切换文件(最近文件)
+<br>
 
+* 聚焦到侧边栏 ctrl+ 0
+* 聚焦到第一个编辑器组 ctrl+ 1
+* ctrl+ ` 显示终端
+* alt+ ` 在工作区切换终端
+* ctrl+ shift+ y显示调试控制台
+
+<br>
+
+* 面板起始键 alt+ a
+
+将终端面板下移: alt+ a, down
+
+将终端面板左移: alt+ a, left
+
+将终端面板右移: alt+ a, right
+
+**切换面板** alt+ a, up
+
+<br>
 
 * 隐藏左侧栏目窗口　ctrl+ b
 * 隐藏开启终端窗口 ctrl+ ` /ctrl+ shift+ ` 创建新窗口
@@ -32,10 +57,13 @@
 * 给建议 ctrl+ i
 * find ctrl+ f
     全局搜索: shift+ ctrl+ f
+    文件夹中搜索: shift+ alt+ f
+* 快捷试图: ctrl+ q( quick open 超好用切换侧边栏)
 
 ***
 * 分屏:
     ctrl+ |
+    将编辑器移动到右侧组 alt+ home( 自定 )
     ctrl+ 1/2/3 拓展分屏数量( 1-> 2-> 3)
     当前分屏左右上下移动 ctrl+ k+ Arrow
     正交拆分窗口 ctrl+ k, ctrl+ | (直接上下拆分)
@@ -73,6 +101,7 @@
     * 选择整行　ctrl+ l
     * 光标在任意位置换行 ctrl+ entre
     * 在行中新起一行 ctrl+ entre
+    * 快速选中行 ctrl+ l
 3. 光标操作
     退回上一次编辑的光标位置 alt+ left/ right
     插入多个光标
@@ -131,3 +160,17 @@ vscode会自动补全[],但是当你遇到 ]时,再摁一次],不会再打一个
 * "ctrl+k, v" 编译md文件, 分屏查看
     shift+ ctrl+ V全局查看md文件
 * 注意markdown的surround型标点语法,比如加粗/url等需要紧贴两端的内容
+
+# 插件
+## 插件: better comment (注释分类高亮工具)
+### tag :
+- ! 代码警告
+- ? 代码存疑
+- \* 重要注释高亮
+- todo 
+- @para 参数标识,显示出定义的函数或方法的参数
+
+## 插件:python indent
+纠正vscode对python代码缩进的错误
+## 插件: indenticator
+提供缩进的白线标识
