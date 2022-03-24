@@ -1,5 +1,5 @@
 /*第二次作业第二题
-废弃方法, 这个方法出现了实在无法解决的问题, 问题已经定位(在3.)
+"读入文件内容全部到一个数组"方法出现了实在无法解决的问题, 问题已经定位(在3.)
 核心考点:
 1.对文件中多行字符串的读取,处理,储存. 注意,标准c中没有getline函数,gcc自己加的
   将全小写字符串单独存放,通过标记变换位置和偏移量来实现字符数组和常量字符串的配合
@@ -21,52 +21,62 @@ void getnext(char T[], int next[]);
 
 int main()
 {
-    char * P_, str[3][500]; //数据变量. 
-    char * flag,* k; //操作变量
-    int i ,len, last_len = 0;
-    freopen("output.txt", "w", stdout);
+    char str[50][50], lower_copy[50][50], in[50], out[50]; //数据变量. 
+    char * flag, * k; //操作变量
+    FILE *fp;
+    int i = 0, len, last_len = 0, num, q = 0;
+    freopen("fileout.txt", "w", stdout);
+    memset(in, 0, sizeof(in));//初始化数组
+    memset(out, 0, sizeof(out));
+    memset(str, 0, sizeof(str));
+    memset(lower_copy, 0, sizeof(lower_copy));
 
-    P_ = textFileInput("filein.txt");
-    memset(str[0], 0, sizeof(str[0]));
-    memset(str[1], 0, sizeof(str[1]));
-    memset(str[2], 0, sizeof(str[2]));
-    strcpy(str[2], P_);
-    str[2][strlen(P_)] = '\0';
-    toLower(str[2]);
-    fgets(str[0], 50, stdin);//被替换, 注意fgets虽然安全, 但是不会自动将\n替换为\0
-    for (i = 0; str[0][i] != '\n'; i++);
-    str[0][i] = '\0';
-    fgets(str[1], 50, stdin);//替换者
-    for (i = 0; str[1][i] != '\n'; i++);
-    str[1][i] = '\0';
-
-    flag = str[2]; 
-    k = str[2];
-    do
+    fp = fopen("filein.txt", "r");
+    while ( fgets(str[i], 50, fp) != NULL )
     {
-        flag = KMPindex(flag, str[0]);//这样写第一次会出问题
-        if (flag == NULL)
-            break;
-        else
-            len = strlen(k) - strlen(flag);
-        //strncpy(flag, str[0], sizeof(char)*strlen(str[1])); 实际上不用替换md
-        for (i = last_len; i < len; i++)
-        {
-            printf("%c", *(P_ + i));
-        }
-        last_len = len + strlen(str[0]) ;
-        flag += strlen(str[0]);
-        printf("%s", str[1]);
+        strcpy(lower_copy[i], str[i]);
+        lower_copy[i][strlen(str[i])] = '\0';
+        toLower(lower_copy[i]);
+        i++;
     }
-    while (1);
+    num = i;
 
-    printf("%s", &str[2][last_len]);
+    fgets(in, 50, stdin);//被替换, 注意fgets虽然安全, 但是不会自动将\n替换为\0
+    for (i = 0; in[i] != '\n'; i++);
+    in[i] = '\0';
+    fgets(out, 50, stdin);//替换者
+    for (i = 0; out[i] != '\n'; i++);
+    out[i] = '\0';
+
+    for (q = 0; q < num; last_len = 0, q++)
+    {
+        flag = lower_copy[q]; 
+        k = lower_copy[q];
+        do
+        {
+            flag = KMPindex(flag, in);
+            if (flag == NULL)
+                break;
+            else
+                len = strlen(k) - strlen(flag);
+            //strncpy(flag, str[0], sizeof(char)*strlen(str[1])); 实际上不用替换md
+            for (i = last_len; i < len; i++)
+            {
+                printf("%c", str[q][i]); //?
+            }
+            last_len = len + strlen(in) ;
+            flag += strlen(in);
+            printf("%s", out);
+        }
+        while (1);
+        printf("%s", &str[q][last_len]);
+    }
 
     fclose(stdout);
-    free(P_);
     return 0;
 }
 
+/*
 char * textFileInput(char * filename)
 {
     //remember to free buffer
@@ -81,11 +91,11 @@ char * textFileInput(char * filename)
     lSize = ftell(fp);
     rewind(fp);
 
-    /* allocate memory for entire content */
+    //allocate memory for entire content
     buffer = calloc( 1, lSize+1 );//用calloc就不用末尾加\0了,自动初始化好了
     if ( !buffer ) fclose(fp), exit(1);//, fputs("memory alloc fails",stderr)
 
-    /* copy the file into the buffer and meantime check it */
+    // copy the file into the buffer and meantime check it 
     if ( 1!=fread( buffer , lSize, 1 , fp) )
     fclose(fp), free(buffer), exit(1);//, fputs("entire read fails",stderr)
 
@@ -93,6 +103,8 @@ char * textFileInput(char * filename)
     // free(buffer);
     return buffer;
 }
+*/
+
 /* 
 这也是一种失败的读入文件方法, 问题在于无法处理文件末尾的奇妙字符. 可能是因为不初始化的问题
 char* 

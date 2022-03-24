@@ -1,3 +1,7 @@
+/*
+第一次作业的计算超长数减法问题
+核心是进位算法(模拟手动算减法)
+*/
 #include<stdio.h>
 #include<string.h>
 

@@ -7,6 +7,7 @@
 
 **ctrl+ shift+ p 全局命令行** //输入?可快速获取帮助
 **shift+ alt+ f**快速格式化代码( 但是有时候过于紧凑 )
+二指扩张收缩快速上下翻页
 ## 代码 
 规则是alt+e, 然后ctrl+ 某语言代称
 * 运行 alt+ e, r (这个最近报错command 'npm.runScript' not found不知道怎么了)或ctrl+ alt+n 
