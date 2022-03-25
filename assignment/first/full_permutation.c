@@ -1,5 +1,5 @@
-￼￼include<iostream>
-using namespace std;
+￼￼
+← using namespace std;
 int n,a[10],visited[10]={0};//初始化定义数字数组和访问数组
 void DFS(int k)
 {
