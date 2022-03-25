@@ -1,5 +1,4 @@
-￼￼
-← using namespace std;
+#include<stdio.h>
 int n,a[10],visited[10]={0};//初始化定义数字数组和访问数组
 void DFS(int k)
 {
@@ -8,9 +7,9 @@ void DFS(int k)
 	{
 		for(j=1;j<=n;j++)//输出数组里面的元素
 		{
-			printf("%5d",a[j]);
+			printf("%d ",a[j]);
 		}
-		cout<<"\n";
+		printf("\n");
 	}
 	else
 	{
@@ -29,7 +28,7 @@ void DFS(int k)
 int main()
 {
 	
-	cin>>n;//输入n
+	scanf("%d", &n);//输入n
 	DFS(1);//从1开始深搜
 	return 0;
 }

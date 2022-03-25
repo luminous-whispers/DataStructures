@@ -1,3 +1,7 @@
+/*
+第一次作业读入和计算复杂表达式问题
+核心是利用栈对数字和符号进行分别处理
+*/
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
