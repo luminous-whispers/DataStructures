@@ -54,10 +54,10 @@ void addPolynomial( const Polynomial Poly1,
             P1= P1->Next;            
         }
 
-    if( P1 == NULL)
-        P->Next= P2;
+    if( P1 == NULL)//最后交换指针的方法虽然巧妙，但是需要注意不能让多个表公用一段内存，否则后期无法释放内存
+        P->Next= P2, P2=NULL;
     else
-        P->Next= P1;
+        P->Next= P1, P1=NULL;
 
     PolySum= P;
 
