@@ -21,7 +21,7 @@ int main()
     Last = FakeHead;
     FakeHead->rank = 1;
     if (q == 1)
-        Start = Tmp;
+        Start = FakeHead;
     for (i = 2; i <= n; i++)
     {
         Tmp = (struct MONKEY *)malloc(sizeof(struct MONKEY));

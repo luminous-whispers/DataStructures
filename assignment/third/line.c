@@ -25,7 +25,7 @@ int main()
     }
     qsort(Line, n, sizeof(struct NODE), cmp);
 
-    for (i = 0; i < n && Line[i].mode == 0; i++)
+    for (i = 0; i < n; i++)// && Line[i].mode == 0
     {
         //Max = 0, Begin = i;
         TmpNum = 1;
@@ -34,7 +34,7 @@ int main()
         Line[i].mode = 1;
         for (j = i+1; j < n; j++)
         {
-            if (Line[TmpLast].x2 == Line[j].x1 && Line[TmpLast].y2 == Line[j].y1 && Line[j].mode != 1)
+            if (Line[j].mode != 1 && Line[TmpLast].x2 == Line[j].x1 && Line[TmpLast].y2 == Line[j].y1)
             {
                 TmpLast = j;
                 TmpNum++;
