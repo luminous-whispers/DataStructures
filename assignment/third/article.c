@@ -42,7 +42,8 @@ int main()
     fp = fopen("article.txt", "r");
     while (fgets(Tmp, 200, fp) != NULL)//按行读入
     {
-        Tmp[ strlen(Tmp) ] = '\0';
+        Tmp[ strlen(Tmp) ] = '\0';//!这是什么智障操作?? fgets函数会自动添加\0, 
+        //!坑是会将末尾\n也读进来, 尤其是win下会读入\r\n,输出时就是两个换行了..
         toLower(Tmp);
 
         for (i = 0; Tmp[i] != '\0'; i+=len)//按单词往后跳

@@ -120,6 +120,8 @@
                 alt+ i== END; alt+ u== HOME; 
                 alt+ d 向左删除
                 alt+ o 开新行
+    **上述键设置已经挪动到系统层, 仅保留原图片供参考**
+    ![图片](F:\notes\DataStructureAlgorithmAnalysis\附件)
     * 光标在不同编辑器窗口跳转 ctrl+ 1/2/3
 6. 复制黏贴 
     整行复制 光标插在某行中, ctrl+ c即可
