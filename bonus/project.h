@@ -10,8 +10,10 @@
 
 enum BOOL{FALSE, TRUE};
 
-//字典预,停用词预处理: 为了使用查表法, 必须写个程序先把字典节点的偏移量找出来;
-enum BOOL InDict(char *);//利用哈希表快查, 文件版本的折半查找法
+/* [5/1] 字典预,停用词预处理: 为了使用查表法, 必须写个程序先把字典节点的偏移量找出来
+利用哈希表快查, 文件版本的折半查找法*/
+//! [5/13] 现用字典树代替查表法, 以上方法抛弃. 主题树全部采用字典树
+enum BOOL InDict(char *);//
 enum BOOL InStopDict(char *);
 enum BOOL IsLetter(char *);
 
@@ -29,7 +31,7 @@ struct WEBSITE{
     int total_word_num;//总词数
     int doc_sim;
     struct KEY_WORD * array;
-    int array_element_num;//告诉这个array指针可以偏移多少位
+    int array_element_num;//告诉这个array指针可以偏移多少位 
 };
 //读取一个文档例程: article.c
 /*
@@ -40,5 +42,19 @@ struct WEBSITE{
 */
 
 /*working flow:
-1. 读入, 开辟num*struct空间, 和关键词数N*struct2空间
+1. 读入, 开辟doc_num*struct空间, 和关键词数key_num*struct2空间
+2. 第一遍处理文档:
+    只记录总数, 和各文档开始位置
+3. 第二遍循环处理每个文档:
+- 对循环每个文档:
+    记录每个文档的:编号(即角标)
+        - 逆向寻找最后一个文章编号, 从而决定开辟多大数组 //todo 逆向寻找很难实现
+        - 总词数(什么意思?是总单词数嘛)
+    寻找每个文档中关键词的信息:
+        - 出现次数
+    计算词频
+- 循环始终:
+    文档总数(这个可以用逆向读取实现)
+    出现k的文档数(key_num个信息)
+4. 计算相关度, 总体排序取前NUM位
 */
