@@ -103,7 +103,7 @@ alt+h/j/k/l/u/i/n/m/d/o 是通过windows增强软件实现的
 
 ## 代码编辑快捷键
 1. 注释:
-    * 多行: "alt+ shift+ a"
+    * 多行: "ctrl+shift+/"(自定)
     * 末尾: "ctrl+ /"
 2. 行操作   
     * 快速移动行 alt+ up/dowm
@@ -121,6 +121,8 @@ alt+h/j/k/l/u/i/n/m/d/o 是通过windows增强软件实现的
         ctrl+ shift+ ArrowKey 插入多行光标(方向键控制)
         ctrl+f2为所有同名词添加光标
         ctrl+u可取消光标操作
+    快速选中相同字符
+        ctrl+shift+l
 4. 查找与替换
     查找 ctrl+ f
     替换 ctrl+ h

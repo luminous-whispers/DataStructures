@@ -13,7 +13,7 @@ enum BOOL{FALSE, TRUE};
 /* [5/1] 字典预,停用词预处理: 为了使用查表法, 必须写个程序先把字典节点的偏移量找出来
 利用哈希表快查, 文件版本的折半查找法*/
 //! [5/13] 现用字典树代替查表法, 以上方法抛弃. 主题树全部采用字典树
-enum BOOL InDict(char *);//
+enum BOOL InDict(char *);
 enum BOOL InStopDict(char *);
 enum BOOL IsLetter(char *);
 
@@ -27,11 +27,12 @@ struct KEY_WORD{
     int anti_key_freq;
 };
 struct WEBSITE{
-    int no;//编号
+    int no_num;//编号
+    char no_serial;//文档内编号
     int total_word_num;//总词数
     int doc_sim;
-    struct KEY_WORD * array;
-    int array_element_num;//告诉这个array指针可以偏移多少位 
+    // struct KEY_WORD * array;
+    // int array_element_num;//告诉这个array指针可以偏移多少位 
 };
 //读取一个文档例程: article.c
 /*

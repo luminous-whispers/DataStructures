@@ -5,6 +5,7 @@
 #include<ctype.h>
 #include<windows.h>
 /*读入文章程序, 目前仅处理一个文章
+读入并识别word
 使用avl平衡树*/
 
 #define ELEMENTTYPE_ char*
